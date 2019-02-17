@@ -24,3 +24,20 @@ class Node:
 		self.data = data
 		self.next = None
 
+
+class stack_ll:
+	"""Stack implemented using a linked list."""
+	def __init__(self):
+		self.head = Node()
+
+	def __repr__(self):
+		if self.head.data == None: return "stack{[]}"
+		stack = [self.head.data]  # list to hold values
+		lastNode = self.head
+
+		while lastNode.next != None:
+			lastNode = lastNode.next
+			stack.append(lastNode.data)
+
+			return f"stack({str(stack)})"
+
