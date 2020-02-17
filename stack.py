@@ -16,3 +16,11 @@ class stack_l:
 
 	def peek(self):
 		return self.items[-1]
+
+
+class Node:
+	"""General node for linked list implementation."""
+	def __init__(self, data=None):
+		self.data = data
+		self.next = None
+
