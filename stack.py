@@ -41,3 +41,48 @@ class stack_ll:
 
 			return f"stack({str(stack)})"
 
+        def push(self, value):
+		if self.head.data == None:  # stack is empty
+			self.head.data = value
+			return
+
+
+		lastNode = self.head
+		while lastNode.next != None:
+			lastNode = lastNode.next
+
+		# Create a new Node to hold the pushed data
+		lastNode.next = Npde()
+		lastNode.next.data = value
+
+	def pop(self):
+		# Case 1: list size is 0
+		if self.head.data == None: raise IndexError("Cannot pop from empty stack.")
+		# Case 2: list size is 1
+		if self.head.next == None:
+			value = self.head.data
+			self.head.data = None
+			return value
+
+		# Case 3: list size is greater than 1
+		lastNode = self.head
+		while lastNode.next.next != None:
+			lastNode = lastNode.next
+
+		value = lastNode.next.data
+		lastNode.next = None
+		return value
+
+	def peek(self):
+		# Case 1: list size is 0
+		if self.head.data == None: raise IndexError("Cannto peek from empty stack.")
+		# Case 2: list size is 1
+		if self.head.next == None:
+			return self.head.data
+
+		# Case 3: list size is greater than 1
+		lastNode = self.head
+		while lastNode.next.next != None:
+			lastNode = lastNode.next
+
+		return lastNode.next.data
