@@ -1,3 +1,3 @@
 # data_structures
 Implementation of data structures in Python.  
-Data structures are implemented using built-in arrays or linked lists.
+Data structures are implemented using Python's built-in lists, or linked lists.
