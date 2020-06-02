@@ -1,7 +1,9 @@
 name: CI
 
-on: [push, watch]
-
+on: 
+  repository_dispatch:
+    types: manual-trigger
+  push:
 
 jobs:
   test:
@@ -10,10 +12,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8.3'
     - name: Install
       run: |
         echo "Installing"
