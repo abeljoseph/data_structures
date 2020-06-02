@@ -1,6 +1,7 @@
 name: CI
 
-on: [push, repository_dispatch]
+on: [push, watch]
+
 
 jobs:
   test:
