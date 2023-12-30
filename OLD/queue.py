@@ -1,4 +1,4 @@
-class queue:
+class queue_l:
     """Queue implemented using a list."""
     def __init__(self):
         self.items = []
